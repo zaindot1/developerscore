@@ -1,96 +1,797 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Vercel HTML Starter</title>
-    <meta
-      name="description"
-      content="High-performance HTML based website template."
-    />
-  </head>
-  <body>
-    <h1>Vercel HTML Starter</h1>
-    <p>
-      This template is a simple, but powerful single
-      <code>index.html</code> file deployed to
-      <a href="https://vercel.com">Vercel</a>. When your site is deployed, all
-      static assets (like HTML, JavaScript, CSS, images, and more) are deployed
-      globally to every
-      <a href="https://vercel.com/docs/concepts/edge-network/overview"
-        >Vercel Edge Network</a
-      >
-      region.
-    </p>
-    <h2>Simple, privacy-friendly analytics</h2>
-    <p>
-      Want to understand your visitor traffic? Vercel Analytics gives you
-      first-party, privacy-friendly traffic analytics for your HTML site. This
-      template is already configured using the following script:
-    </p>
-    <pre><code>&lt;script defer src="/_vercel/insights/script.js"&gt;&lt;/script&gt;</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/analytics">Vercel Analytics</a>.
-    </p>
-    <h2>Integrated with git</h2>
-    <p>
-      Deploying updates to your site is as simple as
-      <code>git push</code> thanks to Vercel's advanced
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-      Support for GitHub, GitLab, Bitbucket is zero-configuration, and with the
-      flexible Vercel CLI and API, you can integrate with any tool possible.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-    </p>
-    <h2>Fast <code>gzip</code> compression</h2>
-    <p>
-      To help ensure the smallest possible file sizes for your static assets,
-      the Vercel Edge Network compresses files by default using
-      <code>gzip</code>. You can also optionally use
-      <code>brotli</code> compressesion if you prefer.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/edge-network/compression"
-        >compression</a
-      >.
-    </p>
-    <h2>Advanced routing configuration</h2>
-    <p>
-      Vercel gives you a variety of ways to configure the routing of your
-      website. For example, adding redirects, rewrites, or headers to your page.
-      While you can use <code>vercel.json</code> to define these through JSON,
-      you can also express your routing configuration as code using
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-    <p>
-      Middleware runs before the
-      <a href="https://vercel.com/docs/concepts/edge-network/caching"
-        >Vercel Edge Network Cache</a
-      >, so you can configure routing exactly as your application needs. For
-      example, this template uses <code>middleware.js</code> defined in the root
-      of the repository to add additional security headers to the site:
-    </p>
-    <pre><code>referrer-policy: origin-when-cross-origin
-strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-content-type-options: nosniff
-x-dns-prefetch-control: on
-x-frame-options: DENY</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developers Core | Cutting-Edge Software Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#E50914',
+                        secondary: '#000000',
+                        accent: '#FF0000',
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif'],
+                        'tech': ['Orbitron', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .tech-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #E50914 0%, #FF0000 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .glow {
+            text-shadow: 0 0 10px rgba(229, 9, 20, 0.7);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(229, 9, 20, 0.2);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(229, 9, 20, 0.3);
+            border: 1px solid rgba(229, 9, 20, 0.5);
+        }
+        
+        .hexagon {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(229, 9, 20, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(229, 9, 20, 0);
+            }
+        }
+        
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #E50914;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .contact-input {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(229, 9, 20, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-input:focus {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(229, 9, 20, 0.7);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-secondary">
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 bg-black z-50 flex items-center justify-center">
+        <div class="hexagon w-20 h-20 bg-primary flex items-center justify-center pulse">
+            <span class="tech-font text-2xl font-bold">DC</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-40 bg-black bg-opacity-90 backdrop-filter backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <div class="hexagon w-12 h-12 bg-primary flex items-center justify-center">
+                        <span class="tech-font text-lg font-bold">DC</span>
+                    </div>
+                    <span class="ml-3 tech-font text-2xl font-bold gradient-text">Developers<span class="text-white">Core</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-white hover:text-primary px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="#services" class="nav-link text-white hover:text-primary px-3 py-2 text-sm font-medium">Services</a>
+                        <a href="#about" class="nav-link text-white hover:text-primary px-3 py-2 text-sm font-medium">About</a>
+                        <a href="#work" class="nav-link text-white hover:text-primary px-3 py-2 text-sm font-medium">Work</a>
+                        <a href="#contact" class="nav-link text-white hover:text-primary px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white hover:text-primary focus:outline-none">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-95">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-white hover:text-primary">Home</a>
+                <a href="#services" class="block px-3 py-2 text-base font-medium text-white hover:text-primary">Services</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-white hover:text-primary">About</a>
+                <a href="#work" class="block px-3 py-2 text-base font-medium text-white hover:text-primary">Work</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-white hover:text-primary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-28">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-black via-black to-primary opacity-20"></div>
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80')] bg-cover bg-center opacity-30"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+                <div class="mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 tech-font glow">
+                        <span class="gradient-text">Code</span> The Future
+                    </h1>
+                    <p class="text-lg md:text-xl mb-8 text-gray-300">
+                        We transform ideas into digital reality with cutting-edge technology solutions tailored to your business needs.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="px-8 py-3 bg-primary hover:bg-red-700 rounded-md text-white font-medium transition duration-300 transform hover:scale-105">
+                            Get Started
+                        </a>
+                        <a href="#services" class="px-8 py-3 border border-primary text-primary hover:bg-primary hover:text-white rounded-md font-medium transition duration-300 transform hover:scale-105">
+                            Our Services
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="hexagon w-full h-96 bg-gradient-to-br from-primary to-black opacity-90 mx-auto"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-code text-6xl md:text-8xl text-white opacity-80"></i>
+                            <p class="mt-4 tech-font text-xl text-white">Core Development Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-black bg-opacity-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 tech-font">
+                    <span class="gradient-text">Our</span> Services
+                </h2>
+                <p class="max-w-2xl mx-auto text-gray-400">
+                    Comprehensive development services to power your digital transformation
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="card-hover bg-secondary p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-primary bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 tech-font">Web Development</h3>
+                    <p class="text-gray-400 mb-4">
+                        Custom, responsive websites built with modern frameworks to deliver exceptional user experiences.
+                    </p>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            React & Next.js Applications
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            E-commerce Solutions
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            CMS Integration
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="card-hover bg-secondary p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-primary bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 tech-font">Mobile Development</h3>
+                    <p class="text-gray-400 mb-4">
+                        Cross-platform mobile applications that perform seamlessly on iOS and Android devices.
+                    </p>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            React Native Development
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Flutter Applications
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Native iOS/Android
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="card-hover bg-secondary p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-primary bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-server text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 tech-font">Backend Services</h3>
+                    <p class="text-gray-400 mb-4">
+                        Robust, scalable backend systems to power your applications and business logic.
+                    </p>
+                    <ul class="space-Y-2 text-gray-300">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Node.js & Express
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Python & Django
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Database Design
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="card-hover bg-secondary p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-primary bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-cloud text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 tech-font">Cloud Solutions</h3>
+                    <p class="text-gray-400 mb-4">
+                        Secure, reliable cloud infrastructure tailored to your application's needs.
+                    </p>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            AWS Deployment
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Azure Integration
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Google Cloud Services
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="card-hover bg-secondary p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-primary bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 tech-font">AI & ML Integration</h3>
+                    <p class="text-gray-400 mb-4">
+                        Leverage artificial intelligence to automate processes and gain insights from your data.
+                    </p>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Predictive Analytics
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Natural Language Processing
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Computer Vision
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="card-hover bg-secondary p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-primary bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 tech-font">Cybersecurity</h3>
+                    <p class="text-gray-400 mb-4">
+                        Protect your digital assets with comprehensive security solutions and best practices.
+                    </p>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Penetration Testing
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Secure Code Review
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Compliance Consulting
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-black to-primary opacity-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+                <div class="mb-12 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 tech-font">
+                        <span class="gradient-text">About</span> Developers Core
+                    </h2>
+                    <p class="text-gray-300 mb-6">
+                        Founded in 2020, Developers Core has been at the forefront of digital innovation, helping businesses of all sizes transform their ideas into reality through cutting-edge technology solutions.
+                    </p>
+                    <p class="text-gray-300 mb-8">
+                        Our team of expert developers, designers, and strategists work collaboratively to deliver exceptional results that drive business growth and create meaningful digital experiences.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="bg-secondary p-4 rounded-lg border-l-4 border-primary">
+                            <h3 class="text-xl font-bold mb-2 tech-font">50+</h3>
+                            <p class="text-gray-400">Projects Completed</p>
+                        </div>
+                        <div class="bg-secondary p-4 rounded-lg border-l-4 border-primary">
+                            <h3 class="text-xl font-bold mb-2 tech-font">15+</h3>
+                            <p class="text-gray-400">Expert Developers</p>
+                        </div>
+                    </div>
+                    <a href="#work" class="px-8 py-3 border border-primary text-primary hover:bg-primary hover:text-white rounded-md font-medium transition duration-300">
+                        See Our Work
+                    </a>
+                </div>
+                <div class="relative">
+                    <div class="hexagon w-full h-96 bg-gradient-to-br from-black to-primary opacity-90 mx-auto"></div>
+                    <div class="absolute inset-0 flex items-center justify-center p-8">
+                        <div class="text-center">
+                            <i class="fas fa-users text-6xl text-white opacity-80 mb-6"></i>
+                            <h3 class="tech-font text-2xl text-white mb-4">Our Mission</h3>
+                            <p class="text-gray-300">
+                                To empower businesses through innovative technology solutions that solve real-world problems and drive digital transformation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="py-20 bg-black bg-opacity-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 tech-font">
+                    <span class="gradition-text">Our</span> Portfolio
+                </h2>
+                <p class="max-w-2xl mx-auto text-gray-400">
+                    A showcase of our recent projects and the technologies we've used to bring them to life
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="card-hover bg-secondary rounded-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-primary to-black relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-shopping-cart text-6xl text-white opacity-30"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 tech-font">E-Commerce Platform</h3>
+                        <p class="text-gray-400 mb-4">
+                            A full-featured online store with custom CMS and payment integration.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary bg-opacity-20 text-primary text-xs rounded-full">React</span>
+                            <span class="px-3 py-1 bg-primary bg-opacity-20 text-primary text-xs rounded-full">Node.js</span>
+                            <span class="px-3 py-1 bg-primary bg-opacity-20 text-primary text-xs rounded-full">MongoDB</span>
+                        </div>
+                        <a href="#" class="text-primary hover:text-red-300 text-sm font-medium flex items-center">
+                            View Case Study <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="card-hover bg-secondary rounded-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-black to-primary relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-mobile-alt text-6xl text-white opacity-30"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 tech-font">Fitness Mobile App</h3>
+                        <p class="text-gray-400 mb-4">
+                            AI-powered workout and nutrition tracking application with social features.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary bg-opacity-20 text-primary text-xs rounded-full">Flutter</span>
+                            <span class="px-3 py-1 bg-primary bg-opacity-20 text-primary text-xs rounded-full">Firebase</span>
+                            <span class="px-3 py-1 bg-primary bg-opacity-20 text-primary text-xs rounded-full">TensorFlow</span>
+                        </div>
+                        <a href="#" class="text-primary hover:text-red-300 text-sm font-medium flex items-center">
+                            View Case Study <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="card-hover bg-secondary rounded-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-primary to-black relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-chart-line text-6xl text-white opacity-30"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 tech-font">Business Analytics Dashboard</h3>
+                        <p class="text-gray-400 mb-4">
+                            Real-time data visualization and reporting tool for enterprise clients.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary bg-opacity-20 text-primary text-xs rounded-full">Vue.js</span>
+                            <span class="px-3 py-1 bg-primary bg-opacity-20 text-primary text-xs rounded-full">Python</span>
+                            <span class="px-3 py-1 bg-primary bg-opacity-20 text-primary text-xs rounded-full">AWS</span>
+                        </div>
+                        <a href="#" class="text-primary hover:text-red-300 text-sm font-medium flex items-center">
+                            View Case Study <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="px-8 py-3 border border-primary text-primary hover:bg-primary hover:text-white rounded-md font-medium transition duration-300 inline-flex items-center">
+                    View All Projects <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-black via-black to-primary opacity-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 tech-font">
+                    <span class="gradient-text">Client</span> Testimonials
+                </h2>
+                <p class="max-w-2xl mx-auto text-gray-400">
+                    What our clients say about working with Developers Core
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="card-hover bg-secondary p-8 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-primary bg-opacity-20 flex items-center justify-center">
+                            <i class="fas fa-user text-primary"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-gray-500 text-sm">CEO, TechStart Inc.</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic mb-4">
+                        "Developers Core transformed our outdated web platform into a modern, user-friendly application that has significantly improved our customer engagement and sales."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="card-hover bg-secondary p-8 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-primary bg-opacity-20 flex items-center justify-center">
+                            <i class="fas fa-user text-primary"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Michael Chen</h4>
+                            <p class="text-gray-500 text-sm">CTO, HealthTrack</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic mb-4">
+                        "The mobile app developed by Developers Core exceeded our expectations. Their attention to detail and commitment to quality is unmatched in the industry."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="card-hover bg-secondary p-8 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-primary bg-opacity-20 flex items-center justify-center">
+                            <i class="fas fa-user text-primary"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Emily Rodriguez</h4>
+                            <p class="text-gray-500 text-sm">Director, FinTech Solutions</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic mb-4">
+                        "Working with Developers Core was a game-changer for our business. Their technical expertise and innovative approach helped us solve complex challenges efficiently."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+                <div class="mb-12 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 tech-font">
+                        <span class="gradient-text">Get</span> In Touch
+                    </h2>
+                    <p class="text-gray-300 mb-8">
+                        Ready to start your next project? Contact us today to discuss how we can help bring your vision to life.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 rounded-full bg-primary bg-opacity-20 flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-white mb-1">Our Location</h3>
+                                <p class="text-gray-400">London, United Kingdom</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 rounded-full bg-primary bg-opacity-20 flex items-center justify-center">
+                                    <i class="fas fa-envelope text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-white mb-1">Email Us</h3>
+                                <p class="text-gray-400">business@thedeveloperscore.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 rounded-full bg-primary bg-opacity-20 flex items-center justify-center">
+                                    <i class="fas fa-phone-alt text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-white mb-1">Call Us</h3>
+                                <p class="text-gray-400">+44 7918766556</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary bg-opacity-20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary bg-opacity-20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary bg-opacity-20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary bg-opacity-20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-secondary p-8 rounded-lg">
+                    <form>
+                        <div class="mb-6">
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
+                            <input type="text" id="name" class="contact-input w-full px-4 py-3 rounded-md text-white placeholder-gray-500 focus:ring-primary focus:border-primary" placeholder="John Doe">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                            <input type="email" id="email" class="contact-input w-full px-4 py-3 rounded-md text-white placeholder-gray-500 focus:ring-primary focus:border-primary" placeholder="john@example.com">
+                        </div>
+                        <div class="mb-6">
+                            <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject</label>
+                            <input type="text" id="subject" class="contact-input w-full px-4 py-3 rounded-md text-white placeholder-gray-500 focus:ring-primary focus:border-primary" placeholder="Project Inquiry">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Your Message</label>
+                            <textarea id="message" rows="4" class="contact-input w-full px-4 py-3 rounded-md text-white placeholder-gray-500 focus:ring-primary focus:border-primary" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 bg-primary hover:bg-red-700 rounded-md text-white font-medium transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black bg-opacity-90 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="flex justify-center md:order-2 space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-primary">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-primary">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-primary">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-primary">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="mt-8 md:mt-0 md:order-1">
+                    <div class="flex items-center justify-center md:justify-start">
+                        <div class="hexagon w-10 h-10 bg-primary flex items-center justify-center">
+                            <span class="tech-font text-sm font-bold">DC</span>
+                        </div>
+                        <span class="ml-3 tech-font text-xl font-bold gradient-text">Developers<span class="text-white">Core</span></span>
+                    </div>
+                    <p class="mt-4 text-center md:text-left text-gray-400 text-sm">
+                        © 2023 Developers Core. All rights reserved.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-800 pt-8 md:flex md:items-center md:justify-between">
+                <div class="text-center md:text-left">
+                    <p class="text-gray-400 text-sm">
+                        Transforming ideas into digital reality.
+                    </p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <ul class="flex flex-wrap justify-center md:justify-end space-x-6">
+                        <li><a href="#home" class="text-gray-400 hover:text-primary text-sm">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-primary text-sm">Services</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-primary text-sm">About</a></li>
+                        <li><a href="#work" class="text-gray-400 hover:text-primary text-sm">Work</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-primary text-sm">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary text-sm">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shadow-lg hover:bg-red-700 transition duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+            }, 1000);
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Here you would typically send the form data to your server
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+        }
+    </script>
+</body>
 </html>
